@@ -8,6 +8,4 @@ export const getPosts = () => async (dispatch) => {
     } catch (err) {
         console.log(err.message);
     }
-
-    return action; 
 }
