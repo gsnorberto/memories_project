@@ -8,12 +8,12 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-app.use('/posts', postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
+app.use('/posts', postRoutes);
 // https://www.mongodb.com > database > connect > connect your application > copy link > paste in .env file
 const CONNECTION_URL = process.env.MONGODB_CONNECTION_URL;
 const PORT = process.env.PORT;
