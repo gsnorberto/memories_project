@@ -8,7 +8,7 @@ import memories from './images/memories.png';
 import { getPosts } from './actions/posts.js';
 import Posts from "./components/Posts/Posts.js";
 import Form from "./components/Form/Form.js";
-import useStyles from './styles'
+import useStyles from './styles';
 
 const App = () => {
     const classes = useStyles();
