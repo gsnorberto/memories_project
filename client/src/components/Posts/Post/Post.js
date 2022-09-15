@@ -20,7 +20,7 @@ const Post = ({ post }) => {
 
       <div className={classes.overlay2}>
         <Button style={{color: 'white'}} size="small" onClick={() => {}}>
-          <MoreHorizIcon frontSize="default" />
+          <MoreHorizIcon fontSize="default" />
         </Button>
       </div>
 
@@ -29,7 +29,7 @@ const Post = ({ post }) => {
       </div>
 
       <CardContent>
-        <Typography className={classes.title} variant='h5' gutterButtom>{post.message}</Typography>
+        <Typography className={classes.title} variant='h5' gutterBottom>{post.message}</Typography>
       </CardContent>
 
       <CardActions className={classes.cardActions}>
