@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
 
-const Form = ({ currentId, setCurrentID }) => {
+const Form = ({ currentId, setCurrentId }) => {
    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null); // reducers
 
    const classes = useStyles();
@@ -24,21 +24,21 @@ const Form = ({ currentId, setCurrentID }) => {
 
       if(currentId){ // updatePost
          dispatch(updatePost(currentId, postData));
-
       } else { // createPost
          dispatch(createPost(postData));
       }
-
+      clear();
    }
 
    const clear = () => {
-
+      setCurrentId(null);
+      setPostData({ creator: '', title: '', message: '', tags: '', selectedFiles: '' })
    }
 
    return (
       <Paper className={classes.paper}>
          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-            <Typography>Criar uma Memória</Typography>
+            <Typography>{currentId ? 'Editar' : 'Criar'} Memória</Typography>
             <TextField
                name='creator'
                variant='outlined'
@@ -85,7 +85,7 @@ const Form = ({ currentId, setCurrentID }) => {
                size='large'
                type='submit'
                fullWidth
-            > Enviar </Button>
+            > {currentId ? '' : 'Enviar'} </Button>
 
             <Button
                variant='contained'

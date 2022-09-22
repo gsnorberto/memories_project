@@ -6,10 +6,10 @@ export const getPosts = () => async (dispatch) => {
 
         dispatch({ type: 'FETCH_ALL', payload: data });
     } catch (err) {
-        console.log(err.message);
+        console.log(err);
     }
 }
- 
+
 export const createPost = (post) => async (dispatch) => {
     try {
         const { data } = await api.createPost( post );
@@ -26,6 +26,6 @@ export const updatePost = (id, post) => async (dispatch) => {
 
         dispatch({ type: 'UPDATE', payload: data });
     } catch (err) {
-        console.log(err.message);
+        console.log(err);
     }
 } 
