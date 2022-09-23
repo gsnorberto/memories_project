@@ -20,7 +20,7 @@ export const createPost = async (req, res) => {
         await newPost.save();
 
         //successful creation
-        res.status(201).json({ message: 'Post Criado' });
+        res.status(201).json(newPost);
     } catch (err) {
         res.status(409).json({ message: err.message });
     }
@@ -30,7 +30,7 @@ export const updatePost = async (req, res) => {
     const { id: _id } = req.params;
     const post = req.body; 
 
-    // Chedk id
+    // Check id
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('Nenhum Post com esse ID');
 
     const updatedPost = await PostMessage.findByIdAndUpdate(_id, { ...post, _id }, { new: true });
