@@ -10,3 +10,6 @@ export const createPost = (data) => axios.post(url, data);
 
 //update post
 export const updatePost = (id, data) => axios.patch(`${url}/${id}`, data);
+
+// Delete post
+export const deletePost = (id) => axios.delete(`${url}/${id}`);
