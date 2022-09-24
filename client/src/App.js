@@ -29,7 +29,7 @@ const App = () => {
 
             <Grow in>
                 <Container>
-                    <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
+                    <Grid className={classes.mainContainer} container direction="column-reverse" justifyContent="space-between" alignItems="stretch" spacing={3}>
                         {/* Posts */}
                         <Grid item xs={12} sm={7}>
                             <Posts setCurrentId={setCurrentId}/>

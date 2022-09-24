@@ -13,3 +13,6 @@ export const updatePost = (id, data) => axios.patch(`${url}/${id}`, data);
 
 // Delete post
 export const deletePost = (id) => axios.delete(`${url}/${id}`);
+
+// Number of likes
+export const likePost = (id) => axios.patch(`${url}/${id}/likePost`);
